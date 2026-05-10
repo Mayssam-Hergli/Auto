@@ -3,28 +3,77 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Comptes rendus des travaux pratiques</title>
+  <title>Comptes rendus </title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="dashboard.css" />
 </head>
 <body>
+  <script src="auth.js"></script>
+  <script>
+    checkAuth();
+  </script>
+  
+  <!-- Notification Box -->
+  <div id="notificationBox" class="notification-box">
+    <div class="notification-content">
+      <h3 id="notificationTitle">Notification</h3>
+      <p id="notificationMessage"></p>
+      <button class="notification-close" onclick="closeNotification()">Fermer</button>
+    </div>
+  </div>
+
+  <!-- Logout Button -->
+  <div class="header-actions">
+    <span id="userDisplay" class="user-display"></span>
+    <button class="logout-button" onclick="logout()">Se déconnecter</button>
+  </div>
   <main class="page-shell">
     <section class="hero-card">
       <div class="hero-copy">
-        <p class="eyebrow">Comptes rendus des travaux pratiques</p>
-        <h1>Comptes rendus des travaux pratiques</h1>
+       
+        <h1>Comptes rendus </h1>
         <h2>Matière : Automatique Continue</h2>
-        <h3 class="professeur">Professeur : Abderrazek Chatti</h3>
+        <h3 class="professeur">Professeur :  CHATTI Abderrazak</h3>
         <p class="authors">Réalisés par Mayssam Hergli, Senda Derouiche et Malek Soltany</p> 
         
       </div>
     </section>
 
     <section class="button-grid">
-      <a class="doc-button" href="pdf1.pdf" target="_blank" rel="noopener">Compte rendu 1</a>
-      <a class="doc-button" href="pdf2.pdf" target="_blank" rel="noopener">Compte rendu 2</a>
-      <a class="doc-button" href="pdf3.pdf" target="_blank" rel="noopener">Compte rendu 3</a>
-      <a class="doc-button" href="pdf4.pdf" target="_blank" rel="noopener">Compte rendu 4</a>
+      <div class="doc-item">
+        <a class="doc-button" href="docs/pdf1.pdf" target="_blank" rel="noopener">Compte rendu 1</a>
+        <div class="grade-display" id="grade1">Note: --</div>
+        <div class="admin-grade-input" id="adminGradeInput1" style="display: none;">
+          <input type="number" id="gradeInput1" min="0" max="20" placeholder="Note (0-20)" />
+          <button onclick="saveGrade(1)">Attribuer</button>
+        </div>
+      </div>
+      <div class="doc-item">
+        <a class="doc-button" href="docs/pdf2.pdf" target="_blank" rel="noopener">Compte rendu 2</a>
+        <div class="grade-display" id="grade2">Note: --</div>
+        <div class="admin-grade-input" id="adminGradeInput2" style="display: none;">
+          <input type="number" id="gradeInput2" min="0" max="20" placeholder="Note (0-20)" />
+          <button onclick="saveGrade(2)">Attribuer</button>
+        </div>
+      </div>
+      <div class="doc-item">
+        <a class="doc-button" href="docs/pdf3.pdf" target="_blank" rel="noopener">Compte rendu 3</a>
+        <div class="grade-display" id="grade3">Note: --</div>
+        <div class="admin-grade-input" id="adminGradeInput3" style="display: none;">
+          <input type="number" id="gradeInput3" min="0" max="20" placeholder="Note (0-20)" />
+          <button onclick="saveGrade(3)">Attribuer</button>
+        </div>
+      </div>
+      <div class="doc-item">
+        <a class="doc-button" href="docs/pdf4.pdf" target="_blank" rel="noopener">Compte rendu 4</a>
+        <div class="grade-display" id="grade4">Note: --</div>
+        <div class="admin-grade-input" id="adminGradeInput4" style="display: none;">
+          <input type="number" id="gradeInput4" min="0" max="20" placeholder="Note (0-20)" />
+          <button onclick="saveGrade(4)">Attribuer</button>
+        </div>
+      </div>
     </section>
   </main>
-</body>
-</html>
+
+  <script src="dashboard.js"></script>
+

@@ -1,0 +1,173 @@
+/* Notification Box */
+.notification-box {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(180deg, rgba(17, 32, 59, 0.98), rgba(12, 18, 38, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(18px);
+  max-width: 400px;
+  z-index: 1000;
+  display: none;
+  animation: slideIn 0.3s ease;
+}
+
+.notification-box.show {
+  display: block;
+}
+
+.notification-content h3 {
+  margin: 0 0 10px;
+  color: #6d8cff;
+  font-size: 1.1rem;
+}
+
+.notification-content p {
+  margin: 0 0 16px;
+  color: #f8f9ff;
+  font-size: 0.95rem;
+}
+
+.notification-close {
+  background: rgba(109, 140, 255, 0.2);
+  border: 1px solid rgba(109, 140, 255, 0.4);
+  color: #6d8cff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 180ms ease;
+}
+
+.notification-close:hover {
+  background: rgba(109, 140, 255, 0.3);
+  border-color: rgba(109, 140, 255, 0.6);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Header Actions */
+.header-actions {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 999;
+}
+
+.user-display {
+  color: #8aa5ff;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.logout-button {
+  background: linear-gradient(135deg, rgba(109, 140, 255, 0.2), rgba(57, 79, 255, 0.3));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f8f9ff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 180ms ease;
+}
+
+.logout-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(109, 140, 255, 0.55);
+  box-shadow: 0 8px 16px rgba(72, 116, 255, 0.15);
+}
+
+/* Document Item */
+.doc-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.grade-display {
+  font-size: 0.9rem;
+  color: #8aa5ff;
+  font-weight: 600;
+  padding: 8px 12px;
+  background: rgba(109, 140, 255, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid rgba(109, 140, 255, 0.2);
+}
+
+.admin-grade-input {
+  display: flex;
+  gap: 8px;
+}
+
+.admin-grade-input input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8f9ff;
+  font-size: 0.9rem;
+}
+
+.admin-grade-input input:focus {
+  outline: none;
+  border-color: #6d8cff;
+  background: rgba(109, 140, 255, 0.1);
+}
+
+.admin-grade-input button {
+  padding: 10px 14px;
+  background: linear-gradient(135deg, rgba(109, 140, 255, 0.3), rgba(57, 79, 255, 0.4));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f8f9ff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 180ms ease;
+}
+
+.admin-grade-input button:hover {
+  border-color: rgba(109, 140, 255, 0.55);
+  box-shadow: 0 6px 12px rgba(72, 116, 255, 0.15);
+}
+
+@media (max-width: 640px) {
+  .header-actions {
+    top: 10px;
+    left: 10px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .notification-box {
+    top: 10px;
+    right: 10px;
+    max-width: calc(100vw - 20px);
+  }
+
+  .admin-grade-input {
+    flex-direction: column;
+  }
+
+  .admin-grade-input input,
+  .admin-grade-input button {
+    width: 100%;
+  }
+}
